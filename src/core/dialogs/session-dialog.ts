@@ -667,6 +667,12 @@ export class SessionDialog extends Dialog implements Session {
           this.delegate && this.delegate.onInvite ? this.delegate.onInvite(uas) : uas.reject({ statusCode: 488 }); // TODO: Warning header field.
         }
         break;
+      case C.UPDATE:
+        {
+          const uas = new ReInviteUserAgentServer(thi, message);
+          this.delegate && this.delegate.onUpdate ? this.delegate.onUpdate(uas) : uas.accept();
+        }
+        break;
       case C.MESSAGE:
         {
           const uas = new MessageUserAgentServer(this.core, message);
