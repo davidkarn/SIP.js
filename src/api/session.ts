@@ -1425,7 +1425,7 @@ export abstract class Session {
     extraHeaders.push("Referred-By: <" + this.userAgent.configuration.uri + ">");
     extraHeaders.push("Contact: " + this._contact);
     extraHeaders.push(
-      "Allow: " + ["ACK", "CANCEL", "INVITE", "MESSAGE", "BYE", "OPTIONS", "INFO", "NOTIFY", "REFER"].toString()
+      "Allow: " + ["ACK", "CANCEL", "INVITE", "UPDATE", "MESSAGE", "BYE", "OPTIONS", "INFO", "NOTIFY", "REFER"].toString()
     );
     extraHeaders.push("Refer-To: " + referTo);
     return extraHeaders;

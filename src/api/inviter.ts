@@ -138,7 +138,7 @@ export class Inviter extends Session {
     }
     extraHeaders.push("Contact: " + contact);
     extraHeaders.push(
-      "Allow: " + ["ACK", "CANCEL", "INVITE", "MESSAGE", "BYE", "OPTIONS", "INFO", "NOTIFY", "REFER"].toString()
+      "Allow: " + ["ACK", "CANCEL", "INVITE", "UPDATE", "MESSAGE", "BYE", "OPTIONS", "INFO", "NOTIFY", "REFER"].toString()
     );
     if (userAgent.configuration.sipExtension100rel === SIPExtension.Required) {
       extraHeaders.push("Require: 100rel");
