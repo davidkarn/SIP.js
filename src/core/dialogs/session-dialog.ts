@@ -669,8 +669,7 @@ export class SessionDialog extends Dialog implements Session {
         break;
       case C.UPDATE:
         {
-          const uas = new ReInviteUserAgentServer(thi, message);
-          this.delegate && this.delegate.onUpdate ? this.delegate.onUpdate(uas) : uas.accept();
+          this.core.replyStateless(message, { statusCode: 200 });
         }
         break;
       case C.MESSAGE:
