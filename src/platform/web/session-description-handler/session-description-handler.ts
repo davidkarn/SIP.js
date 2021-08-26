@@ -7,6 +7,7 @@ import { Logger } from "../../../core";
 import { MediaStreamFactory } from "./media-stream-factory";
 import { SessionDescriptionHandlerConfiguration } from "./session-description-handler-configuration";
 import { SessionDescriptionHandlerOptions } from "./session-description-handler-options";
+import { stripVideo } from "../modifiers";
 import { PeerConnectionDelegate } from "./peer-connection-delegate";
 
 type ResolveFunction = () => void;
@@ -285,7 +286,10 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
 
     return this.getLocalMediaStream(options)
       .then(() => this.applyModifiers({ sdp, type }, modifiers))
-      .then((sessionDescription) => this.setRemoteSessionDescription(sessionDescription))
+      .then(async (sessionDescription) => {
+        const stripSession = await stripVideo(sessionDescription);
+        this.setRemoteSessionDescription(stripSession);
+      })
       .catch((error) => {
         this.logger.error("SessionDescriptionHandler.setDescription failed - " + error);
         throw error;
