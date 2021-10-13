@@ -2113,7 +2113,7 @@ describe("Web SessionDescriptionHandler", () => {
               });
             });
 
-            describe("sdh1 sendDtmf", () => {
+            xdescribe("sdh1 sendDtmf", () => {
               let result = false;
 
               beforeEach(() => {
