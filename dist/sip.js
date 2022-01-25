@@ -1,7 +1,7 @@
 /*!
  * 
  *  SIP version 0.20.0
- *  Copyright (c) 2014-2021 Junction Networks, Inc <http://www.onsip.com>
+ *  Copyright (c) 2014-2022 Junction Networks, Inc <http://www.onsip.com>
  *  Homepage: https://sipjs.com
  *  License: https://sipjs.com/license/
  *
@@ -14690,7 +14690,7 @@ class Dialog {
         // By convention, handling of unexpected ACKs is responsibility
         // the particular dialog implementation. For example, see SessionDialog.
         // Furthermore, we cannot reply to an "out of sequence" ACK.
-        if (message.method === _messages__WEBPACK_IMPORTED_MODULE_1__.C.ACK) {
+        if (message.method === _messages__WEBPACK_IMPORTED_MODULE_1__.C.ACK || message.method === _messages__WEBPACK_IMPORTED_MODULE_1__.C.UPDATE) {
             return true;
         }
         // Note: We are rejecting on "less than or equal to" the remote

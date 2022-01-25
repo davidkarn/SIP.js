@@ -572,7 +572,7 @@ export class Dialog {
     // By convention, handling of unexpected ACKs is responsibility
     // the particular dialog implementation. For example, see SessionDialog.
     // Furthermore, we cannot reply to an "out of sequence" ACK.
-    if (message.method === C.ACK) {
+    if (message.method === C.ACK || message.method === C.UPDATE) {
       return true;
     }
 
