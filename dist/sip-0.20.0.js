@@ -14499,7 +14499,7 @@ class Dialog {
         // By convention, the handling of ACKs is the responsibility
         // the particular dialog implementation. For example, see SessionDialog.
         // Furthermore, ACKs have same sequence number as the associated INVITE.
-        if (message.method === _messages__WEBPACK_IMPORTED_MODULE_1__.C.ACK) {
+        if (message.method === _messages__WEBPACK_IMPORTED_MODULE_1__.C.ACK || message.method === _messages__WEBPACK_IMPORTED_MODULE_1__.C.UPDATE) {
             return;
         }
         // If the remote sequence number was not empty, but the sequence number
