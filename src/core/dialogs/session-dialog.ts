@@ -913,7 +913,7 @@ export class SessionDialog extends Dialog implements Session {
       // response is received.  This is independent of whatever transport
       // protocols are used to send the response.
       // https://tools.ietf.org/html/rfc6026#section-8.1
-      let timeout = Timers.T1;
+      let timeout = Timers.T1*2;
       const retransmission = (): void => {
         if (!this.ackWait) {
           this.invite2xxTimer = undefined;
@@ -966,7 +966,7 @@ export class SessionDialog extends Dialog implements Session {
       // response is received.  This is independent of whatever transport
       // protocols are used to send the response.
       // https://tools.ietf.org/html/rfc6026#section-8.1
-      let timeout = Timers.T1;
+      let timeout = Timers.T1*2;
       const retransmission = (): void => {
         if (!this.reinviteUserAgentServer) {
           this.invite2xxTimer = undefined;

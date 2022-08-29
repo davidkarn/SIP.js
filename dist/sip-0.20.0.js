@@ -1151,7 +1151,7 @@ class Invitation extends _session__WEBPACK_IMPORTED_MODULE_0__.Session {
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
                     rel1xxRetransmissionTimer = setTimeout(rel1xxRetransmission, (timeout *= 2));
                 };
-                let timeout = _core__WEBPACK_IMPORTED_MODULE_11__.Timers.T1;
+                let timeout = _core__WEBPACK_IMPORTED_MODULE_11__.Timers.T1 * 2;
                 let rel1xxRetransmissionTimer = setTimeout(rel1xxRetransmission, timeout);
             })
                 .catch((error) => {
@@ -15577,7 +15577,7 @@ class SessionDialog extends _dialog__WEBPACK_IMPORTED_MODULE_0__.Dialog {
             // response is received.  This is independent of whatever transport
             // protocols are used to send the response.
             // https://tools.ietf.org/html/rfc6026#section-8.1
-            let timeout = _timers__WEBPACK_IMPORTED_MODULE_25__.Timers.T1;
+            let timeout = _timers__WEBPACK_IMPORTED_MODULE_25__.Timers.T1 * 2;
             const retransmission = () => {
                 if (!this.ackWait) {
                     this.invite2xxTimer = undefined;
@@ -15628,7 +15628,7 @@ class SessionDialog extends _dialog__WEBPACK_IMPORTED_MODULE_0__.Dialog {
             // response is received.  This is independent of whatever transport
             // protocols are used to send the response.
             // https://tools.ietf.org/html/rfc6026#section-8.1
-            let timeout = _timers__WEBPACK_IMPORTED_MODULE_25__.Timers.T1;
+            let timeout = _timers__WEBPACK_IMPORTED_MODULE_25__.Timers.T1 * 2;
             const retransmission = () => {
                 if (!this.reinviteUserAgentServer) {
                     this.invite2xxTimer = undefined;

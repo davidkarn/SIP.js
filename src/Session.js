@@ -652,7 +652,7 @@ Session.prototype = {
    */
   setInvite2xxTimer: function(request, description) {
     var self = this,
-        timeout = SIP.Timers.T1;
+        timeout = SIP.Timers.T1*2;
 
     this.timers.invite2xxTimer = SIP.Timers.setTimeout(function invite2xxRetransmission() {
       if (self.status !== C.STATUS_WAITING_FOR_ACK) {
@@ -997,7 +997,7 @@ InviteServerContext.prototype = {
           this[this.hasOffer ? 'hasAnswer' : 'hasOffer'] = true;
 
           // Retransmit until we get a response or we time out (see prackTimer below)
-          var timeout = SIP.Timers.T1;
+          var timeout = SIP.Timers.T1*2;
           this.timers.rel1xxTimer = SIP.Timers.setTimeout(function rel1xxRetransmission() {
             this.request.reply(statusCode, null, extraHeaders, description);
             timeout *= 2;
