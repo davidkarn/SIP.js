@@ -9,6 +9,7 @@ export const AllowedMethods = [
   C.CANCEL,
   C.INFO,
   C.INVITE,
+  C.UPDATE,
   C.MESSAGE,
   C.NOTIFY,
   C.OPTIONS,
