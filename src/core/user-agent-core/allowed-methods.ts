@@ -1,4 +1,4 @@
-import { C } from "../messages";
+import { C } from "../messages/methods/constants.js";
 
 /**
  * FIXME: TODO: Should be configurable/variable.
@@ -9,6 +9,7 @@ export const AllowedMethods = [
   C.CANCEL,
   C.INFO,
   C.INVITE,
+  C.UPDATE,
   C.MESSAGE,
   C.NOTIFY,
   C.OPTIONS,

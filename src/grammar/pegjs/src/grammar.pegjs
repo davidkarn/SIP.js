@@ -135,19 +135,19 @@ password        = ( unreserved / escaped / "&" / "=" / "+" / "$" / "," )* {
 
 hostport        = host ( ":" port )?
 
-host            = ( hostname / IPv4address / IPv6reference ) {
+host            = ( hostname / IPv4address / IPv6reference / domainlabel ) {
                     options = options || { data: {}};
                     options.data.host = text();
                     return options.data.host; }
 
-hostname        = ( domainlabel "." )* toplabel  "." ? {
+hostname        = ( domainlabel "." )* toplabel "." ? {
                   options = options || { data: {}};
                   options.data.host_type = 'domain';
                   return text(); }
 
 domainlabel     = domainlabel: ( [a-zA-Z0-9_-]+ )
 
-toplabel        = toplabel: ( [a-zA-Z][a-zA-Z0-9-]* )
+toplabel        = token // toplabel: ( [a-zA-Z][a-zA-Z0-9-]* )
 
 IPv6reference   = "[" IPv6address "]" {
                     options = options || { data: {}};

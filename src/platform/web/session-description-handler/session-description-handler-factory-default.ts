@@ -1,10 +1,10 @@
-import { Session } from "../../../api";
-import { defaultMediaStreamFactory } from "./media-stream-factory-default";
-import { defaultPeerConnectionConfiguration } from "./peer-connection-configuration-default";
-import { SessionDescriptionHandler } from "./session-description-handler";
-import { SessionDescriptionHandlerConfiguration } from "./session-description-handler-configuration";
-import { SessionDescriptionHandlerFactory } from "./session-description-handler-factory";
-import { SessionDescriptionHandlerFactoryOptions } from "./session-description-handler-factory-options";
+import { Session } from "../../../api/session.js";
+import { defaultMediaStreamFactory } from "./media-stream-factory-default.js";
+import { defaultPeerConnectionConfiguration } from "./peer-connection-configuration-default.js";
+import { SessionDescriptionHandler } from "./session-description-handler.js";
+import { SessionDescriptionHandlerConfiguration } from "./session-description-handler-configuration.js";
+import { SessionDescriptionHandlerFactory } from "./session-description-handler-factory.js";
+import { SessionDescriptionHandlerFactoryOptions } from "./session-description-handler-factory-options.js";
 
 /**
  * Function which returns a SessionDescriptionHandlerFactory.
@@ -27,7 +27,7 @@ export function defaultSessionDescriptionHandlerFactory(
     }
 
     // make sure we allow `0` to be passed in so timeout can be disabled
-    const iceGatheringTimeout = options?.iceGatheringTimeout !== undefined ? options?.iceGatheringTimeout : 5000;
+    const iceGatheringTimeout = options?.iceGatheringTimeout !== undefined ? options?.iceGatheringTimeout : 500;
 
     // merge passed factory options into default session description configuration
     const sessionDescriptionHandlerConfiguration: SessionDescriptionHandlerConfiguration = {
